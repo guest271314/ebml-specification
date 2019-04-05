@@ -1,4 +1,4 @@
-$(info RFC rendering has been tested with mmark version 1.3.4 and xml2rfc 2.5.1, please ensure these are installed and recent enough.)
+$(info RFC rendering has been tested with mmark version 2.0.40 and xml2rfc 2.5.1, please ensure these are installed and recent enough.)
 
 VERSION := 10
 STATUS := draft-
@@ -10,7 +10,7 @@ $(OUTPUT).md: specification.markdown rfc_frontmatter.markdown
 	cat rfc_frontmatter.markdown $< > $(OUTPUT).md
 
 %.xml: %.md
-	mmark -xml2 -page $< $@
+	mmark -2 $< $@
 
 %.html: %.xml
 	xml2rfc --html $< -o $@
